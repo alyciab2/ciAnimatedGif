@@ -7,7 +7,7 @@ if(NOT TARGET ciAnimatedGif)
 
     # Make a list of source files and define that to be ${SOURCE_LIST}.
     file(GLOB SOURCE_LIST CONFIGURE_DEPENDS
-            "${ciAnimatedGif_PROJECT_ROOT}/src/*.cpp"
+            "${ciAnimatedGif_PROJECT_ROOT}/src/ciAnimatedGif.cpp"
             )
 
     # Create the library!
