@@ -50,6 +50,7 @@ void ciAnimatedGif::parseMetadata(ci::DataSourceRef data)
     // LOGICAL SCREEN DESCRIPTOR
     canvasWidth    = *(inPtr + 6) | *(inPtr + 7) << 8;  // Not guaranteed to be accurate. Often returns 0
     canvasHeight   = *(inPtr + 8) | *(inPtr + 9) << 8;  // Not guaranteed to be accurate. Often returns 0
+
     
     uint8_t packed = *(inPtr + 10);
     
@@ -111,10 +112,10 @@ void ciAnimatedGif::update()
     mCurTex = mFrameList[mCurFrame];
 }
 
-void ciAnimatedGif::draw()
+void ciAnimatedGif::draw(vec2 location)
 {
     update();
 
-    gl::draw(mCurTex);
+    gl::draw(mCurTex, location);
     
 }
